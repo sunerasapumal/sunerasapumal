@@ -1,269 +1,189 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>sunerasapumal — GitHub Profile / Dark Dashboard</title>
-  <meta name="description" content="Dark-themed interactive GitHub profile / professional dashboard for sunerasapumal" />
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#0f1720;
-      --muted:#9aa4b2;
-      --accent:#6ee7b7;
-      --glass: rgba(255,255,255,0.03);
-      --glass-2: rgba(255,255,255,0.02);
-      --glow: 0 6px 30px rgba(110,231,183,0.06);
-      color-scheme: dark;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:radial-gradient(1200px 600px at 10% 10%, rgba(102,126,234,0.08), transparent), radial-gradient(900px 500px at 90% 90%, rgba(124,58,237,0.06), transparent), var(--bg); color:#e6eef6}
+# <img src="https://raw.githubusercontent.com/ABSphreak/ABSphreak/master/gifs/Hi.gif" width="35"> Hi there, I'm Sunera Sapumal!
 
-    /* page layout */
-    .wrap{max-width:1100px;margin:40px auto;padding:28px;display:grid;grid-template-columns:360px 1fr;gap:28px}
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=32&duration=2800&pause=2000&color=A177F7&center=true&vCenter=true&width=940&lines=Full+Stack+Developer+%F0%9F%9A%80;Open+Source+Enthusiast+%F0%9F%92%BB;Problem+Solver+%F0%9F%A7%A9;Always+Learning+New+Things+%F0%9F%93%9A" alt="Typing SVG" />
+</div>
 
-    /* left column */
-    .profile-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:16px;padding:22px;box-shadow:var(--glow);position:relative;overflow:hidden}
-    .avatar{width:110px;height:110px;border-radius:50%;border:3px solid rgba(255,255,255,0.06);overflow:hidden}
-    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
-    .name{font-size:20px;font-weight:700;margin-top:10px}
-    .handle{color:var(--muted);font-size:13px}
-    .bio{margin-top:12px;color:var(--muted);line-height:1.45}
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=sunerasapumal&label=Profile%20views&color=blueviolet&style=for-the-badge" alt="Profile views" />
+  <img src="https://img.shields.io/github/followers/sunerasapumal?label=Followers&style=for-the-badge&color=blue" alt="followers" />
+</p>
 
-    .labels{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .label{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+---
 
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
-    .stat{background:var(--glass);padding:10px;border-radius:10px;text-align:center}
-    .stat .n{font-weight:700}
-    .stat .t{font-size:12px;color:var(--muted)}
+## 🚀 About Me
 
-    /* stickers (floating) */
-    .stickers{position:absolute;inset:0;pointer-events:none}
-    .sticker{position:absolute;font-size:24px;opacity:0.98;transform-origin:center}
-    .s1{left:18px;top:-8px;animation:float 6s ease-in-out infinite}
-    .s2{right:18px;top:24%;animation:float 7.2s ease-in-out infinite}
-    .s3{left:50%;bottom:-12px;transform:translateX(-50%);animation:float 5.4s ease-in-out infinite}
-    .s4{right:6px;bottom:6px;animation:float 6.8s ease-in-out infinite}
-    @keyframes float{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-10px) rotate(8deg)}100%{transform:translateY(0) rotate(0)}}
+```typescript
+const sunera = {
+    location: "🌍 Sri Lanka",
+    code: ["JavaScript", "TypeScript", "Python", "Java", "C++"],
+    technologies: {
+        frontEnd: {
+            js: ["React", "Next.js", "Vue", "Angular"],
+            css: ["Tailwind", "Bootstrap", "Material-UI", "Styled-Components"]
+        },
+        backEnd: {
+            js: ["Node.js", "Express", "NestJS"],
+            python: ["Django", "Flask", "FastAPI"],
+            java: ["Spring Boot"]
+        },
+        databases: ["MongoDB", "PostgreSQL", "MySQL", "Redis"],
+        devOps: ["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions"],
+        mobile: ["React Native", "Flutter"]
+    },
+    currentFocus: "Building scalable web applications & contributing to open source",
+    funFact: "I debug with console.log() and I'm not ashamed! 😄"
+};
+```
 
-    /* right column */
-    .panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:14px;box-shadow:var(--glow)}
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+---
 
-    .card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-    .card h3{margin:0 0 8px 0;font-size:14px}
-    .projs{display:flex;flex-direction:column;gap:10px}
-    .proj{display:flex;gap:12px;align-items:center}
-    .proj .dot{width:46px;height:46;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,0.02),transparent);display:flex;align-items:center;justify-content:center;font-size:18px}
-    .proj .meta{flex:1}
-    .proj .meta h4{margin:0;font-size:13px}
-    .proj .meta p{margin:4px 0 0 0;color:var(--muted);font-size:12px}
+## 🛠️ Tech Stack
 
-    /* skills */
-    .skill{margin-bottom:8px}
-    .skill .row{display:flex;justify-content:space-between;font-size:13px}
-    .bar{height:8px;background:var(--glass-2);border-radius:6px;margin-top:6px;overflow:hidden}
-    .bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa);width:0%;transition:width 1.2s cubic-bezier(.2,.9,.3,1)}
+<div align="center">
 
-    /* terminal */
-    .terminal{background:#05080a;border-radius:8px;padding:14px;color:#cfeef0;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;font-size:13px}
-    .terminal .line{opacity:0.95}
+### 👨‍💻 Languages
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 
-    /* animated chart (svg) */
-    .spark{width:100%;height:60px}
+### 🎨 Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 
-    /* footer */
-    .footer{display:flex;gap:12px;align-items:center;margin-top:18px}
-    .btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px 12px;border-radius:8px;font-size:13px;color:var(--muted);text-decoration:none}
+### ⚙️ Backend
+![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)
 
-    /* small screens */
-    @media (max-width:900px){.wrap{grid-template-columns:1fr;padding:18px}.profile-card{order:2}.panel{order:1}}
+### 🗄️ Database
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)
 
-  </style>
-</head>
-<body>
-  <div class="wrap" id="app">
-    <div class="profile-card">
-      <div style="display:flex;gap:14px;align-items:center">
-        <div class="avatar"><img src="https://github.com/sunerasapumal.png" alt="avatar" /></div>
-        <div>
-          <div class="name">Sunera Sapumal</div>
-          <div class="handle">@sunerasapumal · Software Engineer • Web Dev • IoT</div>
-          <div class="bio">Creative dev focused on building polished web apps, developer tools and clothing brand side-projects. „Be Bold, Be Eminent."</div>
-        </div>
-      </div>
+### ☁️ DevOps & Cloud
+![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 
-      <div class="labels">
-        <div class="label">Java • Spring Boot</div>
-        <div class="label">React • Tailwind</div>
-        <div class="label">Node • Express</div>
-        <div class="label">Product & Design</div>
-      </div>
+### 🔧 Tools
+![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
 
-      <div class="stats">
-        <div class="stat"><div class="n" id="reposCount">—</div><div class="t">Repos</div></div>
-        <div class="stat"><div class="n" id="followers">—</div><div class="t">Followers</div></div>
-        <div class="stat"><div class="n" id="stars">—</div><div class="t">Stars</div></div>
-      </div>
+</div>
 
-      <div class="footer" style="margin-top:12px">
-        <a class="btn" href="https://github.com/sunerasapumal" target="_blank">View GitHub</a>
-        <a class="btn" href="mailto:sunera@example.com">Email</a>
-        <a class="btn" href="#contact">Contact</a>
-      </div>
+---
 
-      <div class="stickers" aria-hidden>
-        <div class="sticker s1">🚀</div>
-        <div class="sticker s2">🎧</div>
-        <div class="sticker s3">👕</div>
-        <div class="sticker s4">✨</div>
-      </div>
-    </div>
+## 📊 GitHub Analytics
 
-    <div class="panel">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px">
-        <h2 style="margin:0">Developer Dashboard</h2>
-        <div style="font-size:13px;color:var(--muted)">Dark • Interactive • Animated</div>
-      </div>
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=sunerasapumal&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sunerasapumal&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117"/>
+</div>
 
-      <div class="grid">
-        <div class="card">
-          <h3>Top Projects</h3>
-          <div class="projs" id="projectList">
-            <!-- filled by JS -->
-          </div>
-        </div>
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sunerasapumal&theme=tokyonight&hide_border=true&background=0d1117" alt="GitHub Streak" />
+</div>
 
-        <div class="card">
-          <h3>Skills</h3>
-          <div class="skill"><div class="row"><span>Java</span><span>85%</span></div><div class="bar"><i data-w="85"></i></div></div>
-          <div class="skill"><div class="row"><span>Spring Boot</span><span>78%</span></div><div class="bar"><i data-w="78"></i></div></div>
-          <div class="skill"><div class="row"><span>Web / JS</span><span>82%</span></div><div class="bar"><i data-w="82"></i></div></div>
-          <div class="skill"><div class="row"><span>UI / Design</span><span>70%</span></div><div class="bar"><i data-w="70"></i></div></div>
-        </div>
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=sunerasapumal&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=a177f7&line=a177f7&point=ffffff" alt="Contribution Graph" />
+</div>
 
-        <div class="card">
-          <h3>Live Terminal</h3>
-          <div class="terminal" id="terminal">
-            <div class="line">$ welcome — fetching recent activity...</div>
-            <div class="line" id="termLines"></div>
-          </div>
-        </div>
+---
 
-        <div class="card">
-          <h3>Monthly Activity</h3>
-          <!-- simple animated sparkline -->
-          <svg class="spark" viewBox="0 0 200 60" preserveAspectRatio="none" id="sparkSVG">
-            <path d="" fill="none" stroke="url(#g)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <defs>
-              <linearGradient id="g"><stop offset="0%" stop-color="#6ee7b7" stop-opacity="0.9"/><stop offset="100%" stop-color="#60a5fa" stop-opacity="0.9"/></linearGradient>
-            </defs>
-          </svg>
-        </div>
-      </div>
+## 🏆 GitHub Trophies
 
-      <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap;align-items:center">
-        <a class="btn" href="https://github.com/sunerasapumal?tab=repositories" target="_blank">All Repos</a>
-        <a class="btn" href="https://twitter.com/intent/tweet?text=Check%20out%20sunerasapumal%20on%20GitHub!" target="_blank">Share</a>
-        <a class="btn" href="#contact">Hire / Collaborate</a>
-      </div>
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=sunerasapumal&theme=tokyonight&no-frame=true&no-bg=true&row=1&column=7" alt="GitHub Trophies" />
+</div>
 
-      <div id="contact" style="margin-top:16px;padding-top:14px;border-top:1px dashed rgba(255,255,255,0.02);">
-        <h3 style="margin-top:6px">Contact & Links</h3>
-        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
-          <a class="btn" href="https://www.linkedin.com/in/sunerasapumal" target="_blank">LinkedIn</a>
-          <a class="btn" href="https://instagram.com/sunerasapumal" target="_blank">Instagram</a>
-          <a class="btn" href="https://t.me/sunerasapumal" target="_blank">Telegram</a>
-        </div>
-      </div>
+---
 
-    </div>
-  </div>
+## 💼 Featured Projects
 
-  <script>
-    /* --- small helper: fetch public user data and repos --- */
-    const username = 'sunerasapumal';
+<div align="center">
 
-    async function fetchGitData(){
-      try{
-        const userRes = await fetch('https://api.github.com/users/' + username);
-        if(!userRes.ok) throw new Error('user fetch failed');
-        const user = await userRes.json();
-        document.getElementById('reposCount').textContent = user.public_repos;
-        document.getElementById('followers').textContent = user.followers;
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=sunerasapumal&repo=project1&theme=tokyonight&hide_border=true&bg_color=0d1117)](https://github.com/sunerasapumal/project1)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=sunerasapumal&repo=project2&theme=tokyonight&hide_border=true&bg_color=0d1117)](https://github.com/sunerasapumal/project2)
 
-        // stars: sum of stargazers_count across top repos
-        const reposRes = await fetch('https://api.github.com/users/' + username + '/repos?per_page=100&sort=updated');
-        const repos = await reposRes.json();
-        let stars = 0;
-        repos.forEach(r => stars += r.stargazers_count || 0);
-        document.getElementById('stars').textContent = stars;
+</div>
 
-        // top 4 projects
-        const sorted = repos.sort((a,b)=> (b.stargazers_count - a.stargazers_count)).slice(0,6);
-        const projNode = document.getElementById('projectList');
-        projNode.innerHTML = '';
-        sorted.forEach(p=>{
-          const div = document.createElement('div'); div.className='proj';
-          div.innerHTML = `<div class="dot">${p.name[0].toUpperCase()}</div><div class="meta"><h4><a style="color:inherit;text-decoration:none" href="${p.html_url}" target="_blank">${p.name}</a></h4><p>${(p.description||'No description').slice(0,80)}</p></div>`;
-          projNode.appendChild(div);
-        });
+---
 
-        // terminal lines: recent commits (mock using repo names and updated_at)
-        const term = document.getElementById('termLines');
-        term.innerHTML = '';
-        const recent = repos.slice(0,6);
-        recent.forEach(r =>{
-          const d = new Date(r.updated_at).toLocaleString();
-          const l = document.createElement('div'); l.className='line'; l.textContent = `$ git pull ${r.name} — updated: ${d}`; term.appendChild(l);
-        });
+## 📈 Contribution Snake
 
-        // sparkline values: contributions-like data from pushed_at dates
-        const points = repos.slice(0,10).map((r,i)=> Math.min(50, Math.abs(new Date() - new Date(r.pushed_at))/1000/60/60/24 % 50 + (i*3)));
-        drawSpark(points);
+<div align="center">
+  <img src="https://raw.githubusercontent.com/sunerasapumal/sunerasapumal/output/github-contribution-grid-snake-dark.svg" alt="Snake animation" />
+</div>
 
-        // animate skill bars
-        document.querySelectorAll('.bar > i').forEach(el=>{
-          const w = el.getAttribute('data-w') || '40';
-          setTimeout(()=> el.style.width = w + '%', 300);
-        });
+---
 
-      }catch(err){
-        console.warn(err);
-      }
-    }
+## 💡 Random Dev Quote
 
-    function drawSpark(arr){
-      if(!arr || !arr.length) return;
-      const w = 200, h = 60;
-      const step = w / (arr.length - 1);
-      const max = Math.max(...arr);
-      const min = Math.min(...arr);
-      const pts = arr.map((v,i)=> `${i*step},${h - ((v - min)/(max - min || 1) * (h-10) + 5)}`);
-      const path = document.querySelector('#sparkSVG path');
-      path.setAttribute('d', 'M' + pts.join(' L '));
+<div align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Random Dev Quote" />
+</div>
 
-      // animate stroke-dashoffset
-      const length = path.getTotalLength();
-      path.style.strokeDasharray = length;
-      path.style.strokeDashoffset = length;
-      path.getBoundingClientRect();
-      path.style.transition = 'stroke-dashoffset 1.2s ease-out';
-      path.style.strokeDashoffset = '0';
-    }
+---
 
-    fetchGitData();
+## 🎯 Current Goals for 2024
 
-    // little entrance animations
-    document.addEventListener('DOMContentLoaded', ()=>{
-      document.querySelectorAll('.card').forEach((c,i)=>{c.style.transform='translateY(8px)';c.style.opacity=0;setTimeout(()=>{c.style.transition='all 420ms cubic-bezier(.2,.9,.3,1)';c.style.transform='translateY(0)';c.style.opacity=1;}, 120*i)});
-    });
+- 🔭 Working on **exciting full-stack projects**
+- 🌱 Learning **Machine Learning & AI**
+- 👯 Looking to collaborate on **open source projects**
+- 💬 Ask me about **Web Development, React, Node.js**
+- ⚡ Fun fact: **I can code for 12 hours straight with just coffee! ☕**
 
-    // optional: make SVG stickers clickable to change theme (demo)
-    document.querySelectorAll('.sticker').forEach(s=> s.addEventListener('click', ()=> alert('Hi! Want this customised?')));
-  </script>
+---
 
-</body>
-</html>
+## 🤝 Connect with Me
+
+<div align="center">
+  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sunerasapumal)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/sunerasapumal)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=google-chrome&logoColor=white)](https://sunerasapumal.dev)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sunera@example.com)
+[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/sunerasapumal)
+
+</div>
+
+---
+
+## 💰 Support My Work
+
+<div align="center">
+  
+[![BuyMeACoffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/sunerasapumal)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/sunerasapumal)
+[![Ko-Fi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/sunerasapumal)
+
+</div>
+
+---
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer&text=Thanks%20for%20visiting!&fontSize=30&fontAlignY=70&animation=twinkling&fontColor=ffffff" />
+</div>
+
+<div align="center">
+  
+### 💻 "Code is like humor. When you have to explain it, it's bad!" – Cory House
+  
+**⭐️ From [sunerasapumal](https://github.com/sunerasapumal) | Let's build something amazing together! 🚀**
+
+</div>
